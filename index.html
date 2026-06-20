@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Поміж слів: проєктивні картки у роботі психолога · 18 липня 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FAF8F3;
+    --clay: #C4956A;
+    --clay-light: #E8D5BC;
+    --clay-dark: #8B6345;
+    --forest: #3D5C4A;
+    --forest-light: #6B8F77;
+    --ink: #1E1A16;
+    --ink-soft: #4A433B;
+    --river: #7BA7BC;
+    --river-light: #B8D4E0;
+    --gold: #C9A84C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--ink);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 80px 40px 60px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 30%, rgba(123,167,188,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 20% 80%, rgba(196,149,106,0.10) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 40% at 50% 50%, rgba(61,92,74,0.08) 0%, transparent 60%);
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        -20deg,
+        transparent,
+        transparent 120px,
+        rgba(255,255,255,0.015) 120px,
+        rgba(255,255,255,0.015) 121px
+      );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-original-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(232, 213, 188, 0.7);
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(196, 149, 106, 0.2);
+    max-width: 600px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--warm-white);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--clay-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 300;
+    color: rgba(250,248,243,0.6);
+    margin-bottom: 48px;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .hero-tag {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--river-light);
+    border: 1px solid rgba(123,167,188,0.3);
+    padding: 6px 16px;
+    border-radius: 100px;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1s forwards;
+  }
+
+  .hero-date {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--clay-light);
+    font-style: italic;
+  }
+
+  .hero-time {
+    font-size: 13px;
+    color: rgba(250,248,243,0.5);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--clay);
+    color: var(--warm-white);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 16px;
+  }
+
+  .hero-cta:hover {
+    background: var(--clay-dark);
+    transform: translateY(-1px);
+  }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.5s forwards;
+  }
+
+  .scroll-hint span {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(250,248,243,0.3);
+    text-transform: uppercase;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(250,248,243,0.3), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 40px; }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--clay-light);
+    opacity: 0.4;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--warm-white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .about-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .about-text h2 em {
+    font-style: italic;
+    color: var(--clay-dark);
+  }
+
+  .about-text p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .about-quote {
+    background: var(--ink);
+    color: var(--warm-white);
+    padding: 40px;
+    position: relative;
+  }
+
+  .about-quote::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: var(--clay);
+    opacity: 0.3;
+    position: absolute;
+    top: -20px;
+    left: 24px;
+    line-height: 1;
+  }
+
+  .about-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--cream);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+  }
+
+  .about-quote cite {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--clay);
+    font-style: normal;
+  }
+
+  /* ── INLINE CTA ── */
+  .inline-cta {
+    background: var(--ink);
+    padding: 60px 40px;
+    text-align: center;
+    color: var(--warm-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .inline-cta-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 80% at 30% 50%, rgba(196,149,106,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 70% 50%, rgba(123,167,188,0.08) 0%, transparent 60%);
+  }
+
+  .inline-cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .inline-cta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--warm-white);
+    margin-bottom: 12px;
+  }
+
+  .inline-cta h3 em {
+    font-style: italic;
+    color: var(--clay-light);
+  }
+
+  .inline-cta p {
+    font-size: 14px;
+    color: rgba(250,248,243,0.65);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .inline-cta-button {
+    display: inline-block;
+    background: var(--clay);
+    color: var(--warm-white);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .inline-cta-button:hover {
+    background: var(--clay-dark);
+    transform: translateY(-2px);
+  }
+
+  .inline-cta-meta {
+    margin-top: 16px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(250,248,243,0.4);
+    text-transform: uppercase;
+  }
+
+  .cta-highlight {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: clamp(18px, 2.4vw, 26px) !important;
+    color: var(--clay-light) !important;
+    font-style: italic;
+    margin-bottom: 32px !important;
+    letter-spacing: 0.02em;
+  }
+
+  /* Lighter variant on cream background */
+  .inline-cta-light {
+    background: var(--cream);
+    color: var(--ink);
+    border-top: 0.5px solid var(--clay-light);
+    border-bottom: 0.5px solid var(--clay-light);
+  }
+
+  .inline-cta-light h3 {
+    color: var(--ink);
+  }
+
+  .inline-cta-light h3 em {
+    color: var(--clay-dark);
+  }
+
+  .inline-cta-light p {
+    color: var(--ink-soft);
+  }
+
+  .inline-cta-light .inline-cta-meta {
+    color: var(--ink-soft);
+    opacity: 0.6;
+  }
+
+  /* ── PROGRAM ── */
+  .program {
+    background: var(--cream);
+  }
+
+  .program h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    margin-bottom: 48px;
+    color: var(--ink);
+  }
+
+  .decks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .deck-card {
+    background: var(--warm-white);
+    border: 0.5px solid var(--clay-light);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .deck-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(30, 26, 22, 0.08);
+  }
+
+  .deck-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: var(--cream);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .deck-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .deck-card:hover .deck-image {
+    transform: scale(1.03);
+  }
+
+  .deck-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--river-light), var(--clay-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  .deck-content {
+    padding: 28px 28px 32px;
+    flex: 1;
+  }
+
+  .deck-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--clay);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .deck-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .deck-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .program-extras {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .extra-card {
+    padding: 24px 28px;
+    background: var(--ink);
+    color: var(--warm-white);
+    border-left: 3px solid var(--clay);
+  }
+
+  .extra-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--clay-light);
+    margin-bottom: 8px;
+  }
+
+  .extra-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(250,248,243,0.65);
+  }
+
+  /* ── SPEAKER ── */
+  .speaker {
+    background: var(--forest);
+    color: var(--warm-white);
+  }
+
+  .speaker-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .speaker-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    filter: grayscale(20%) contrast(1.05);
+  }
+
+  .speaker-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+
+  .speaker-info .section-label {
+    color: var(--clay-light);
+  }
+
+  .speaker-info .section-label::after {
+    background: rgba(255,255,255,0.15);
+  }
+
+  .speaker-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--warm-white);
+    margin-bottom: 8px;
+  }
+
+  .speaker-title {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--clay-light);
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+
+  .speaker-bio p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(250,248,243,0.75);
+    margin-bottom: 16px;
+  }
+
+  .speaker-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--clay-light);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(250,248,243,0.4);
+    text-transform: uppercase;
+  }
+
+  /* ── PRICING ── */
+  .pricing {
+    background: var(--warm-white);
+  }
+
+  .pricing h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  .pricing-note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 48px;
+    line-height: 1.6;
+  }
+
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--clay-light);
+    border: 1px solid var(--clay-light);
+    margin-bottom: 48px;
+  }
+
+  .pricing-card {
+    background: var(--cream);
+    padding: 40px 32px;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .pricing-card.featured {
+    background: var(--ink);
+    color: var(--warm-white);
+  }
+
+  .pricing-card.featured .price-label,
+  .pricing-card.featured .price-deadline {
+    color: rgba(250,248,243,0.5);
+  }
+
+  .pricing-card.featured .price-amount {
+    color: var(--clay-light);
+  }
+
+  .pricing-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: var(--clay);
+    color: var(--warm-white);
+    padding: 4px 12px;
+    margin-bottom: 24px;
+  }
+
+  .price-label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .price-currency {
+    font-size: 18px;
+    vertical-align: super;
+  }
+
+  .price-deadline {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .pricing-card.featured .price-deadline {
+    border-top-color: rgba(255,255,255,0.08);
+  }
+
+  /* ── COUNTER ── */
+  .counter-block {
+    background: var(--clay);
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .counter-text {
+    color: var(--warm-white);
+  }
+
+  .counter-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 4px;
+  }
+
+  .counter-text p {
+    font-size: 13px;
+    opacity: 0.75;
+  }
+
+  .counter-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--warm-white);
+    line-height: 1;
+  }
+
+  .counter-number span {
+    font-size: 16px;
+    opacity: 0.6;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CTA BLOCK ── */
+  .cta-block {
+    text-align: center;
+  }
+
+  .cta-block p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--warm-white);
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 48px;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.2s;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--clay-dark);
+    transform: translateY(-2px);
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    background: var(--cream);
+  }
+
+  .testimonials h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    margin-bottom: 48px;
+    color: var(--ink);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--clay-light);
+    border: 1px solid var(--clay-light);
+  }
+
+  .testimonial {
+    background: var(--warm-white);
+    padding: 40px 36px;
+  }
+
+  .testimonial p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .testimonial cite {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--clay);
+    font-style: normal;
+  }
+
+  /* ── PAINS (Знайомо?) ── */
+  .pains {
+    background: var(--ink);
+    color: var(--warm-white);
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pains-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 80% 30%, rgba(196,149,106,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 20% 70%, rgba(123,167,188,0.06) 0%, transparent 50%);
+  }
+
+  .pains-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .pains h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 48px;
+    color: var(--warm-white);
+  }
+
+  .pains h2 em {
+    font-style: italic;
+    color: var(--clay-light);
+  }
+
+  .pains-quotes {
+    display: grid;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .pain-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2.4vw, 24px);
+    font-style: italic;
+    color: rgba(250,248,243,0.75);
+    line-height: 1.5;
+    padding-left: 32px;
+    border-left: 2px solid var(--clay);
+  }
+
+  .pains-conclusion {
+    font-size: 15px;
+    color: rgba(250,248,243,0.6);
+    line-height: 1.8;
+    max-width: 640px;
+  }
+
+  .pains-scenarios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 48px 0;
+  }
+
+  .scenario {
+    background: rgba(196, 149, 106, 0.05);
+    border-left: 2px solid var(--clay);
+    padding: 20px 24px;
+  }
+
+  .scenario h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--clay-light);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .scenario p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(250,248,243,0.75);
+  }
+
+  /* ── FOR WHOM ── */
+  .for-whom {
+    background: var(--warm-white);
+  }
+
+  .for-whom h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    margin-bottom: 48px;
+    color: var(--ink);
+  }
+
+  .for-whom h2 em {
+    font-style: italic;
+    color: var(--clay-dark);
+  }
+
+  .checklist {
+    display: grid;
+    gap: 2px;
+    background: var(--clay-light);
+    border: 1px solid var(--clay-light);
+  }
+
+  .checklist-item {
+    background: var(--cream);
+    padding: 24px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: background 0.3s;
+  }
+
+  .checklist-item:hover {
+    background: var(--clay-light);
+  }
+
+  .check-mark {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--clay);
+    color: var(--warm-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .checklist-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  /* ── BENEFITS (Що отримаєте) ── */
+  .benefits {
+    background: var(--cream);
+  }
+
+  .benefits h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 300;
+    margin-bottom: 48px;
+    color: var(--ink);
+  }
+
+  .benefits h2 em {
+    font-style: italic;
+    color: var(--clay-dark);
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--clay-light);
+    border: 1px solid var(--clay-light);
+  }
+
+  .benefit-card {
+    background: var(--warm-white);
+    padding: 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .benefit-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--clay-light);
+    color: var(--clay-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .benefit-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .benefit-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  /* ── ORGANIZER ── */
+  .organizer {
+    background: var(--ink);
+    color: var(--warm-white);
+    padding: 80px 40px;
+  }
+
+  .organizer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .organizer h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--clay-light);
+    margin-bottom: 8px;
+  }
+
+  .organizer-photo-wrapper {
+    position: relative;
+  }
+
+  .organizer-photo {
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    filter: grayscale(15%) contrast(1.02);
+    border: 3px solid rgba(196, 149, 106, 0.3);
+  }
+
+  .organizer-role {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(250,248,243,0.4);
+    margin-bottom: 24px;
+  }
+
+  .organizer p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(250,248,243,0.65);
+  }
+
+  .organizer-label {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 16px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 40px;
+    padding-bottom: 100px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(250,248,243,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── STICKY MOBILE CTA ── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    border-top: 1px solid rgba(196, 149, 106, 0.3);
+    padding: 14px 20px;
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.2);
+  }
+
+  .sticky-cta-text {
+    font-size: 12px;
+    color: rgba(250,248,243,0.8);
+    line-height: 1.3;
+    flex: 1;
+  }
+
+  .sticky-cta-text strong {
+    display: block;
+    color: var(--clay-light);
+    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .sticky-cta-button {
+    background: var(--clay);
+    color: var(--warm-white);
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sticky-cta-button:active {
+    background: var(--clay-dark);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 0.7; transform: scaleY(1.1); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    section { padding: 60px 24px; }
+    .hero { padding: 80px 24px 60px; }
+    .about-grid,
+    .speaker-grid,
+    .organizer-inner { grid-template-columns: 1fr; gap: 40px; }
+    .program-grid,
+    .pricing-cards,
+    .testimonials-grid,
+    .benefits-grid,
+    .decks-grid,
+    .program-extras { grid-template-columns: 1fr; }
+    .speaker-photo-placeholder { aspect-ratio: 1/1; }
+    .counter-block { flex-direction: column; text-align: center; }
+    .hero-meta { flex-direction: column; gap: 16px; }
+    .speaker-stats { gap: 24px; }
+    .pains { padding: 60px 24px; }
+    .pain-quote { padding-left: 20px; }
+    .pains-scenarios { grid-template-columns: 1fr; gap: 16px; margin: 32px 0; }
+    .checklist-item { padding: 20px 24px; gap: 16px; }
+    .organizer-photo { max-width: 200px; margin: 0 auto; display: block; }
+    .inline-cta { padding: 48px 24px; }
+    .sticky-cta.visible { display: flex; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Онлайн-воркшоп · Zoom · 18 липня 2026</p>
+    <p class="hero-original-title">Beyond Words: The Use of Projective Cards in Psychological Work</p>
+    <h1 class="hero-title">Поміж <em>слів</em></h1>
+    <p class="hero-subtitle">Проєктивні картки у роботі психолога</p>
+    <div class="hero-tags">
+      <span class="hero-tag">Ріки</span>
+      <span class="hero-tag">Дороги</span>
+      <span class="hero-tag">Родинні історії</span>
+      <span class="hero-tag">Трансформації</span>
+      <span class="hero-tag">Переходи</span>
+      <span class="hero-tag">Травма</span>
+      <span class="hero-tag">Горе</span>
+      <span class="hero-tag">Невизначеність</span>
+      <span class="hero-tag">Внутрішній рух</span>
+      <span class="hero-tag">Кризи</span>
+      <span class="hero-tag">Вибори</span>
+      <span class="hero-tag">Ідентичність</span>
+    </div>
+    <div class="hero-meta">
+      <span class="hero-date">18 липня 2026, 11:00–14:00</span>
+      <span class="hero-time">Київський час · Zoom · 3 години з кейсом наживо</span>
+    </div>
+    <br>
+    <a href="https://forms.gle/Gi8UtHSteqpBZt7x6" target="_blank" class="hero-cta">Я з вами 18 липня</a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Далі</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">Про воркшоп</div>
+        <h2>Коли <em>образ</em> говорить<br>замість слів</h2>
+        <p>Я часто бачу, як клієнтам важко говорити про себе. Бракує слів, виходить плутано, або зовсім німіє.</p>
+        <p>А потім вони беруть картку. І раптом — є дорога. Є ріка. Є стара фотографія, на якій можна впізнати щось своє.</p>
+        <p>Картки не пояснюють клієнта. Вони дають місце, де він може себе побачити сам.</p>
+        <p>На воркшопі Vassia покаже, як з цим працювати глибоко — з ріками, дорогами, родинними галереями і дитячими подорожами.</p>
+      </div>
+      <div class="about-quote">
+        <p>Наприкінці кожної терапії я завжди запитую клієнта: які сесії запам'яталися найбільше? Відповідь завжди одна — ті, де були картки.</p>
+        <cite>Vassia Sarantopoulou</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section class="pains">
+  <div class="pains-bg"></div>
+  <div class="pains-content">
+    <div class="section-label" style="color: var(--clay-light);">Знайомо?</div>
+    <h2>Коли клієнт <em>мовчить</em>, а ви відчуваєте — є чому з'явитися, але ще немає простору, де це можна розмістити</h2>
+    <div class="pains-quotes">
+      <p class="pain-quote">"Знаю, що всередині є багато. Але отримую лише знизування плечима."</p>
+      <p class="pain-quote">"Клієнт інтелектуалізує все. Як вийти на відчуття?"</p>
+      <p class="pain-quote">"Каже 'нормально' — і уникає роботи над основним своїм запитом."</p>
+    </div>
+
+    <div class="pains-scenarios">
+      <div class="scenario">
+        <h3>Ви арттерапевт</h3>
+        <p>Клієнт каже: "я не вмію малювати". І йде у супротив, ще не почавши. А картка — вже намальована. З нею можна просто почати розмову.</p>
+      </div>
+      <div class="scenario">
+        <h3>Ви психодрама-практик</h3>
+        <p>Клієнт не актор, грати не хоче. Але образ на картці — може уявити. Сцену за ним — описати. І ось ви вже у роботі.</p>
+      </div>
+      <div class="scenario">
+        <h3>Клієнту важко з уявою</h3>
+        <p>Не кожен легко створює образи з голови. Картки — готовий матеріал, з яким можна одразу почати.</p>
+      </div>
+      <div class="scenario">
+        <h3>Ви працюєте зі спогадами</h3>
+        <p>Власних сімейних фото немає, або діставати їх боляче. Сімейна галерея — як інший альбом, який можна відкрити разом, у безпеці.</p>
+      </div>
+      <div class="scenario">
+        <h3>Ви на КПТ-сесії</h3>
+        <p>Клієнт переоцінює свої думки, але вони злиплись з ним. Через образ на картці їх легше побачити збоку.</p>
+      </div>
+      <div class="scenario">
+        <h3>Ви ведете групу</h3>
+        <p>Хтось бере слово, хтось мовчить, хтось виправдовується. А коли всі обирають картку — кожен має рівний шанс. Без тиску виступу.</p>
+      </div>
+    </div>
+
+    <p class="pains-conclusion">Брак довіри. Дисоціація. Обмежена емоційна обізнаність. Причин багато. Кожна — валідна. Саме тому тисячі терапевтів, консультантів і коучів у світі додають проєктивні картки до свого інструментарію.</p>
+  </div>
+</section>
+
+<!-- INLINE CTA after PAINS -->
+<section class="inline-cta">
+  <div class="inline-cta-bg"></div>
+  <div class="inline-cta-content">
+    <h3>Готові додати <em>новий інструмент</em><br>до своєї практики?</h3>
+    <p class="cta-highlight">3 години з Vassia Sarantopoulou · кейс наживо · 20+ технік</p>
+    <a href="https://forms.gle/Gi8UtHSteqpBZt7x6" target="_blank" class="inline-cta-button">Я з вами 18 липня</a>
+    <p class="inline-cta-meta">Кількість місць обмежена</p>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="program">
+  <div class="container">
+    <div class="section-label">Чотири метафори</div>
+    <h2>Кожна колода — окрема<br>терапевтична метафора</h2>
+    <div class="decks-grid">
+      <div class="deck-card">
+        <div class="deck-image-wrapper">
+          <img src="https://static.wixstatic.com/media/c770e8_7d3de614544640058bf69d8a668f9445~mv2.png/v1/fill/w_1200,h_810,al_c,q_85/c770e8_7d3de614544640058bf69d8a668f9445~mv2.png" alt="The River" class="deck-image">
+        </div>
+        <div class="deck-content">
+          <div class="deck-number">01</div>
+          <h3>The River</h3>
+          <p>Життя як рух, переходи, перешкоди, течія. Робота з життєвими процесами та змінами.</p>
+        </div>
+      </div>
+      <div class="deck-card">
+        <div class="deck-image-wrapper">
+          <img src="https://static.wixstatic.com/media/c770e8_d68ac5eaa363454389cc4444351c8a66~mv2.jpg/v1/fill/w_1200,h_1200,al_c,q_85/c770e8_d68ac5eaa363454389cc4444351c8a66~mv2.jpg" alt="Roads" class="deck-image">
+        </div>
+        <div class="deck-content">
+          <div class="deck-number">02</div>
+          <h3>Roads</h3>
+          <p>Життєві вибори, роздоріжжя, напрямки розвитку. Для роботи з рішеннями і невизначеністю.</p>
+        </div>
+      </div>
+      <div class="deck-card">
+        <div class="deck-image-wrapper">
+          <img src="https://static.wixstatic.com/media/c770e8_4efee82ff04f43a5b703f998eee95bdb~mv2.jpg/v1/fill/w_1200,h_1200,al_c,q_85/c770e8_4efee82ff04f43a5b703f998eee95bdb~mv2.jpg" alt="My Family Gallery" class="deck-image">
+        </div>
+        <div class="deck-content">
+          <div class="deck-number">03</div>
+          <h3>My Family Gallery</h3>
+          <p>Внутрішній сімейний альбом. Стосунки, прив'язаність, історія родини та особиста ідентичність.</p>
+        </div>
+      </div>
+      <div class="deck-card">
+        <div class="deck-image-wrapper">
+          <img src="https://static.wixstatic.com/media/c770e8_b29fee1f43aa44ee89fe2c73370b8ba8~mv2.jpg/v1/fill/w_1200,h_868,al_c,q_85/c770e8_b29fee1f43aa44ee89fe2c73370b8ba8~mv2.jpg" alt="The World of Trains" class="deck-image">
+        </div>
+        <div class="deck-content">
+          <div class="deck-number">04</div>
+          <h3>The World of Trains</h3>
+          <p>Дитяча терапія через образ подорожі, вагонів, станцій та персонажів.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-extras">
+      <div class="extra-card">
+        <h3>+ Робота наживо</h3>
+        <p>Vassia показує роботу з картками наживо. Ви можете бути спостерігачем — або взяти участь у роботі особисто.</p>
+      </div>
+      <div class="extra-card">
+        <h3>+ Глибше за основи</h3>
+        <p>Не для тих, хто вперше тримає картки в руках. Для тих, хто вже має базу і хоче йти далі.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="for-whom">
+  <div class="container">
+    <div class="section-label">Для кого</div>
+    <h2>Цей воркшоп <em>для вас</em>,<br>якщо хоча б щось з цього — про вас</h2>
+    <div class="checklist">
+      <div class="checklist-item">
+        <div class="check-mark">✓</div>
+        <p>Ваші клієнти заходять у "ступор" і не можуть знайти слова — а ви хочете інструмент, який створює простір замість тиску</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-mark">✓</div>
+        <p>Ви вже працюєте з МАК, але відчуваєте, що використовуєте лише 10% можливостей</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-mark">✓</div>
+        <p>Вам потрібні нові інструменти для роботи з травмою, горем, життєвими переходами та дисоціацією</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-mark">✓</div>
+        <p>Ви ведете групи або парну роботу і шукаєте інструмент, який працює в обох форматах</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-mark">✓</div>
+        <p>Ви тільки на початку шляху і хочете інструмент, з яким можна почати працювати одразу — без багатотисячного навчання</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-mark">✓</div>
+        <p>Ви прагнете доступу до закордонної експертизи без подорожі та великих витрат</p>
+      </div>
+      <div class="checklist-item">
+        <div class="check-mark">✓</div>
+        <p>Вам важливо бачити техніку в реальній роботі — а не лише чути про неї в теорії</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKER -->
+<section class="speaker">
+  <div class="container">
+    <div class="speaker-grid">
+      <img src="images/vassia.jpeg" alt="Vassia Sarantopoulou" class="speaker-photo">
+      <div class="speaker-info">
+        <div class="section-label">Спікер</div>
+        <h2 class="speaker-name">Vassia<br>Sarantopoulou</h2>
+        <p class="speaker-title">Psychologist, M.Sc. · AntiLoneliness · The Therapy Business Circle</p>
+        <div class="speaker-bio">
+          <p>Психологиня (M.Sc.), засновниця <strong>AntiLoneliness</strong> — практики ментального здоров'я в Нідерландах, і <strong>The Therapy Business Circle</strong> — міжнародної спільноти, що підтримує психологів, психотерапевтів і консультантів у зміцненні клінічної впевненості, розвитку професійної ідентичності та побудові стабільної приватної практики.</p>
+          <p>Працює з індивідуальними клієнтами, парами, групами та фахівцями над темами тривоги, вигорання, самотності, перфекціонізму, горя, внутрішнього конфлікту, емоційної регуляції, ідентичності, стосунків і особистісного розвитку. Її клінічна робота сформована підходами схема-терапії, емоційно-фокусованої терапії, транзактного аналізу, консультування при втратах і горі, майндфулнес та креативних терапевтичних методів.</p>
+          <p>Має значний досвід використання проєктивних карток у терапії, супервізії, групах і професійному навчанні. Її підхід до карток — <em>клієнт-центрований, чутливий до травми</em>, побудований на цікавості, символізмі, емоційній безпеці та повазі до власного процесу клієнта у пошуку сенсу.</p>
+        </div>
+        <div class="speaker-stats">
+          <div>
+            <div class="stat-number">20</div>
+            <div class="stat-label">років практики</div>
+          </div>
+          <div>
+            <div class="stat-number">20+</div>
+            <div class="stat-label">технік з картками</div>
+          </div>
+          <div>
+            <div class="stat-number">🇳🇱</div>
+            <div class="stat-label">Нідерланди · онлайн</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-label">Участь</div>
+    <h2>Оберіть свій формат</h2>
+    <p class="pricing-note">Кількість місць обмежена. Воркшоп проходить одноразово в прямому ефірі — запис не передбачено.</p>
+
+    <!-- COUNTER -->
+    <div class="counter-block">
+      <div class="counter-text">
+        <h3>Super Early Bird</h3>
+        <p>Залишилось місць за найкращою ціною</p>
+      </div>
+      <div>
+        <div class="counter-number" id="counter">7 <span>/ 10 місць</span></div>
+      </div>
+    </div>
+
+    <div class="pricing-cards">
+      <div class="pricing-card">
+        <div class="pricing-badge">Super Early Bird</div>
+        <p class="price-label">Найкраща ціна</p>
+        <div class="price-amount"><span class="price-currency">₴</span>1800</div>
+        <p class="price-deadline">До 5 липня 2026</p>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge">Early Bird</div>
+        <p class="price-label">Рання реєстрація</p>
+        <div class="price-amount"><span class="price-currency">₴</span>2200</div>
+        <p class="price-deadline">До 12 липня 2026</p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-badge">Regular</div>
+        <p class="price-label">Стандартна ціна</p>
+        <div class="price-amount"><span class="price-currency">₴</span>2500</div>
+        <p class="price-deadline">До 18 липня 2026</p>
+      </div>
+    </div>
+
+    <div class="cta-block">
+      <p>Після реєстрації ви отримаєте підтвердження та посилання на Zoom.<br>Є питання? Напишіть особисто.</p>
+      <a href="https://forms.gle/Gi8UtHSteqpBZt7x6" class="btn-primary">Я з вами 18 липня</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label">Відгуки учасників</div>
+    <h2>Що кажуть колеги</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p>"Воркшоп був дуже корисним і змістовним. Vassia створила чудову атмосферу і навела безліч прикладів використання карток. Я відчуваю значно більше впевненості."</p>
+        <cite>Учасниця воркшопу</cite>
+      </div>
+      <div class="testimonial">
+        <p>"Vassia блискуче провела воркшоп — очевидно, що вона дуже захоплена цією темою. Рекомендую всім колегам у сфері!"</p>
+        <cite>Учасниця воркшопу</cite>
+      </div>
+      <div class="testimonial">
+        <p>"Це чудовий інструмент для роботи з клієнтами. Я в захваті від можливостей застосування карток — і вже не можу дочекатися, щоб використати їх на сесіях."</p>
+        <cite>Учасниця воркшопу</cite>
+      </div>
+      <div class="testimonial">
+        <p>"Дуже практичний і глибокий воркшоп. Vassia охопила різні теми і бездоганно пояснила практичне застосування карток у різних контекстах."</p>
+        <cite>Учасниця воркшопу</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INLINE CTA after TESTIMONIALS (light) -->
+<section class="inline-cta inline-cta-light">
+  <div class="inline-cta-content">
+    <h3>Долучайтеся до <em>тих, хто вже знає,</em><br>як це працює</h3>
+    <p>Тисячі терапевтів у світі вже додали проєктивні картки до своєї практики</p>
+    <a href="https://forms.gle/Gi8UtHSteqpBZt7x6" target="_blank" class="inline-cta-button">Забронювати місце</a>
+    <p class="inline-cta-meta">Super Early Bird діє до 5 липня</p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="container">
+    <div class="section-label">Після воркшопу</div>
+    <h2>Що ви <em>заберете з собою</em></h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3>Глибший контакт з клієнтом</h3>
+        <p>Інструмент, який створює простір довіри з перших хвилин — без необхідності тиснути або витягувати.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>20+ практичних технік</h3>
+        <p>Для індивідуальної, парної та групової роботи. Готові вправи, які можна інтегрувати в сесії одразу після воркшопу.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Робота зі складними клієнтами</h3>
+        <p>Травма, дисоціація, freeze mode, інтелектуалізація — конкретні підходи для випадків, де звичні методи не працюють.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Метафоричний підхід</h3>
+        <p>Не лише про картки. Про роботу з образом, символом, наративом — як фундамент терапевтичного процесу.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Демонстрація наживо</h3>
+        <p>Vassia показує роботу з картками наживо. Ви можете бути спостерігачем — або взяти участь у роботі особисто.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Доступ до спільноти</h3>
+        <p>Можливість познайомитися з колегами, які працюють у схожому полі — і продовжити обмін після воркшопу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INLINE CTA after BENEFITS (strong, dark) -->
+<section class="inline-cta">
+  <div class="inline-cta-bg"></div>
+  <div class="inline-cta-content">
+    <h3>18 липня. <em>Три години.</em><br>Інструмент на все професійне життя.</h3>
+    <p>Super Early Bird — 1800 грн (до 5 липня)<br>Запис не передбачено. Місць — обмежена кількість.</p>
+    <a href="https://forms.gle/Gi8UtHSteqpBZt7x6" class="inline-cta-button">Я з вами 18 липня</a>
+    <p class="inline-cta-meta">Після реєстрації — лист з деталями оплати</p>
+  </div>
+</section>
+
+<!-- ORGANIZER -->
+<section class="organizer">
+  <div class="organizer-inner">
+    <div class="organizer-photo-wrapper">
+      <img src="images/mariana.jpeg" alt="Мар'яна Вербицька" class="organizer-photo">
+    </div>
+    <div>
+      <div class="organizer-label">Організатор</div>
+      <h3>Мар'яна Вербицька</h3>
+      <p class="organizer-role">Психолог · Арт-терапевт · Психодраматист</p>
+      <p>Практикую 9+ років. Працюю з груповими форматами, арт-терапією та метафоричними методами. Офіційний партнер Story & Therapy в Україні.</p>
+      <p style="font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; color: rgba(250,248,243,0.55); line-height: 1.6; margin-top: 24px; padding-left: 20px; border-left: 2px solid var(--clay);">
+        Я вірю, що образ може сказати те, для чого ще немає слів. Саме тому я привожу цих спікерів і ці інструменти в українську практику.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-text">
+    <strong>Поміж слів · 18 липня</strong>
+    Super Early Bird — 1800 грн (до 5 липня)
+  </div>
+  <a href="https://forms.gle/Gi8UtHSteqpBZt7x6" class="sticky-cta-button">Зареєструватись</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Мар'яна Вербицька · marianasense.com · Всі питання: @maryana_vinka</p>
+</footer>
+
+<script>
+  // Simple counter that reads/writes from storage
+  (async () => {
+    const TOTAL = 10;
+    let remaining = TOTAL;
+
+    try {
+      const stored = await window.storage.get('super_eb_remaining');
+      if (stored) {
+        remaining = parseInt(stored.value);
+      } else {
+        await window.storage.set('super_eb_remaining', String(TOTAL));
+      }
+    } catch (e) {
+      // storage not available, use default
+    }
+
+    const el = document.getElementById('counter');
+    if (el) {
+      el.innerHTML = `${remaining} <span>/ ${TOTAL} місць</span>`;
+    }
+  })();
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.deck-card, .testimonial, .pricing-card, .about-quote, .benefit-card, .checklist-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Sticky mobile CTA — show after scrolling past hero
+  const stickyCta = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero');
+  if (stickyCta && hero) {
+    window.addEventListener('scroll', () => {
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      if (window.scrollY > heroBottom - 200) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    });
+  }
+</script>
+</body>
+</html>
